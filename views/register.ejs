@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <form class="form-horizontal" action='/users/register' method="POST">
+    <fieldset>
+      <div id="legend">
+        <legend class="">Register</legend>
+      </div>
+      <div class="control-group">
+
+        <!-- Username -->
+        <label class="control-label" for="username">Name</label>
+        <div class="controls">
+          <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
+          <p class="help-block">name can contain any letters or numbers, without spaces</p>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- E-mail -->
+        <label class="control-label" for="email">E-mail</label>
+        <div class="controls">
+          <input type="text" id="email" name="username" placeholder="" class="input-xlarge">
+          <p class="help-block">Please provide your E-mail (This will consider as your username)</p>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- Password-->
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+          <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+          <p class="help-block">Password should be at least 4 characters</p>
+        </div>
+      </div>
+
+
+
+      <div class="control-group">
+        <!-- Button -->
+        <div class="controls">
+          <button class="btn btn-success">Register</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <% if (messages.length > 0) { %>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+    <%= messages %>
+  </div>
+  <% } %>
+</body>
+
+</html>

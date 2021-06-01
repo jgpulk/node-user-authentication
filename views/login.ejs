@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="login-block">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <form class="md-float-material form-material" action="/users/login" method="POST">
+            <div class="auth-box card">
+              <div class="card-block">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3 class="text-center heading">Login</h3>
+                  </div>
+                  <br><br><br>
+                </div>
+                <div class="form-group form-primary"> <input type="text" class="form-control" name="username" placeholder="Email" id="email"> </div>
+                <div class="form-group form-primary"> <input type="password" class="form-control" name="password" placeholder="Password" id="password"> </div>
+                <% if (messages.length > 0) { %>
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                  <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                  <%= messages %>
+                </div>
+                <% } %>
+                <div class="row">
+                  <div class="col-md-12"> <input type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Login Now">
+                  </div>
+                </div>
+                <div class="or-container">
+                  <div class="line-separator"></div>
+                  <div class="or-label">or</div>
+                  <div class="line-separator"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12"> <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/users/auth/google"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</a> </div>
+                  <div class="col-md-12"> <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/users/auth/facebook"><img src="https://img.icons8.com/fluent/16/000000/facebook-new.png" /> Signup Using Facebook</a> </div>
+                </div> <br>
+                <p class="text-inverse text-center">Doesnt have an account? <a href="/users/register" data-abc="true">Register</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

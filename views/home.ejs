@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+  <div class="card text-center">
+    <div class="card-header">
+      Home Page
+    </div>
+    <div class="card-body">
+
+      <%
+        if(user.provider=="google"){
+      %>
+      <p class="card-text">Auth Type : <%= user.provider %></p>
+      <p class="card-text">google id : <%= user.googleId %></p>
+      <p class="card-text">Name : <%= user.name %></p>
+      <%
+        }
+        else if(user.provider=="facebook"){
+      %>
+      <p class="card-text">Auth Type : <%= user.provider %></p>
+      <p class="card-text">facebook id : <%= user.facebookId %></p>
+      <p class="card-text">Name : <%= user.name %></p>
+      <%
+        }
+        else{
+      %>
+      <p class="card-text">Auth Type : DB</p>
+      <p class="card-text">Username / Email : <%= user.username %></p>
+      <p class="card-text">Name : <%= user.name %></p>
+      <%
+         }
+      %>
+      <a href="/users/logout" class="btn btn-primary">Logout</a>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
